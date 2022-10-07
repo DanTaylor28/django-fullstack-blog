@@ -21,4 +21,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     # Path to home page, also in urls.py(blog)! which is why its included()
     path('', include('blog.urls'), name='blog_urls'),
+    # path to allauth for authentication for commenting logging in etc
+    path('accounts/', include('allauth.urls')),
 ]

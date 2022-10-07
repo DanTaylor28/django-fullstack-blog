@@ -7,5 +7,7 @@ from django.urls import path
 # You also need to import these views to main codestar urls file.
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
+    # <slug:slug> tells the url what layout my url will have so it can find
+    # the page to render
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]
