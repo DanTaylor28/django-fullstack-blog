@@ -6,5 +6,6 @@ from django.urls import path
 # to add these paths for every page that you want to be rendered.
 # You also need to import these views to main codestar urls file.
 urlpatterns = [
-    path('', views.PostList.as_view(), name='home')
+    path('', views.PostList.as_view(), name='home'),
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]
