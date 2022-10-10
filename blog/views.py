@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse  # reverse can look up url from name given in urls.py
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
 
@@ -59,6 +60,7 @@ class PostDetail(View):
             # because we want to assign post to it first
             comment.post = post
             comment.save()
+            messages.success(request, 'Message fucking recieved boiiii')
         else:
             # return empty comment form if not valid
             comment_form = CommentForm()
