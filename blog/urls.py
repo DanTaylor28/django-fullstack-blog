@@ -10,4 +10,5 @@ urlpatterns = [
     # <slug:slug> tells the url what layout my url will have so it can find
     # the page to render
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
 ]
