@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% block content %}
+<!-- loads crispy forms to the template -->
+{% load crispy_forms_tags %}
 
 <div class="masthead">
     <div class="container">
@@ -77,6 +79,20 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- For later -->
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    <!-- (cross sight request forgery) add to any form you
+                        create to protect from hackers etc -->
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+
+                {% endif %}
+
             </div>
         </div>
     </div>

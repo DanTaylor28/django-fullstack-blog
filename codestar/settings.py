@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'blog',
 ]
 
@@ -59,6 +60,10 @@ SITE_ID = 1
 # login/logout redirect urls to tell django to redirect us to the home page.
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# tells crispy forms we want to use bootstrap classes for formatting
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # prevents 500 errors during login and registration
 ACCOUNT_EMAIL_VERIFICATION = 'none'
