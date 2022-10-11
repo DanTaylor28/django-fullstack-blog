@@ -60,7 +60,7 @@ class PostDetail(View):
             # because we want to assign post to it first
             comment.post = post
             comment.save()
-            messages.success(request, 'Message fucking recieved boiiii')
+            messages.success(request, 'Your comment has been received.')
         else:
             # return empty comment form if not valid
             comment_form = CommentForm()
